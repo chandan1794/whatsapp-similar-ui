@@ -49,3 +49,25 @@ function datetimeCompare(msgA, msgB) {
     }
     return comparison;
 }
+
+function getPreviousFileName(currentFileName) {
+    var currentMonth = Number(currentFileName.substr(0, 2));
+    var currentYear = Number(currentFileName.substring(2, 6));
+
+    var newMonth = currentMonth;
+    var newYear = currentYear;
+    if(currentMonth > 1) {
+        newMonth = currentMonth - 1;
+        if (newMonth < 10) {
+            newMonth = "0" + newMonth; 
+        } else {
+            newMonth = String(newMonth);
+        }
+    } else {
+        newMonth = "12";
+        newYear = currentYear - 1;
+        newYear = String(newYear);
+    }
+
+    return String(newMonth) + String(newYear);
+}
