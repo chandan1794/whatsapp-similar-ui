@@ -1,0 +1,19 @@
+.navbar {
+    background-color: #128C7E;
+    font-weight: 500;
+}
+
+a.navbar-brand {
+    color: #FFFFFF;
+}
+
+a.navbar-brand #name {
+    font-weight: 200;
+}
+
+a.navbar-brand img {
+    width: 80px;
+    border-color: white;
+    border-width: 0.2em;
+    border-style: solid;
+}
