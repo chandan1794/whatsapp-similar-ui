@@ -36,9 +36,9 @@ function datetimeCompare(msgA, msgB) {
   
     let comparison = 0;
     if (datetimeA > datetimeB) {
-      comparison = 1;
-    } else if (datetimeA < datetimeB) {
       comparison = -1;
+    } else if (datetimeA < datetimeB) {
+      comparison = 1;
     }
     return comparison;
 }
