@@ -24,19 +24,44 @@
                             <span id="name">Pandu & Pandu</span> 
                         </span>
                     </a>
+				</div>
+				<div class="float-right">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<div id="alert-container" class="container-fluid">
+							</div>			
+						</li>
+					</ul>
+				</div>
+			  </div>
+			  <div class="container-fluid">
+                <div class="navbar-header">
                 </div>
               </div>
 		</nav>
-		
+
 		<div id="message-box-container" class="container-fluid">
             <div id="message-box">
-            </div>
-        </div>
+			</div>
+		</div>
+
+		<nav class="navbar navbar-expand-sm">
+            <div class="container-fluid">
+                <ul class="navbar-nav">
+					<li class="nav-item">
+					  	<a id="load-older-messages" class="nav-link">Load Older Messages</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Top</a>
+				  	</li>
+				</ul>
+			</div>
+		</nav>
 	</body>
 	<script src="js/index.js"></script>
 	<script src="js/helper_functions.js"></script>
 	<script src="js/html_elements.js"></script>
 	<script>
-		loadMessages(getMonthString(new Date()));
+		loadMessages(getMonthYearString(new Date()));
 	</script>
 </html>

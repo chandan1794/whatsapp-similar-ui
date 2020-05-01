@@ -17,3 +17,18 @@ a.navbar-brand img {
     border-width: 0.2em;
     border-style: solid;
 }
+
+.nav-item .nav-link {
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.nav-item .nav-link:hover{
+    color: #128C7E;
+    background-color: #FFFFFF;
+}
+
+.nav-item .nav-link.disabled {
+    color: #a9a9a9;
+}

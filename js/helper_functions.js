@@ -19,10 +19,17 @@ String.prototype.formatUnicorn = String.prototype.formatUnicorn || function () {
     return str;
 };
 
-function getMonthString(datetimeObject) {
-    var months = ['january','february','march','april','may','june','july','august',
-                    'september','october','november','december'];
-    return months[datetimeObject.getMonth()]; // getMonth method returns the month of the date (0-January :: 11-December)
+function getMonthYearString(datetimeObject) {
+    var month = datetimeObject.getMonth() + 1;
+    var year = datetimeObject.getFullYear();
+
+    if(month < 10){
+        month = "0" + month;
+    } else {
+        month = String(month);
+    }
+
+    return month + year;
 }
 
 /**
@@ -36,9 +43,41 @@ function datetimeCompare(msgA, msgB) {
   
     let comparison = 0;
     if (datetimeA > datetimeB) {
-      comparison = 1;
-    } else if (datetimeA < datetimeB) {
       comparison = -1;
+    } else if (datetimeA < datetimeB) {
+      comparison = 1;
     }
     return comparison;
+}
+
+function getPreviousFileName(currentFileName) {
+    var currentMonth = Number(currentFileName.substr(0, 2));
+    var currentYear = Number(currentFileName.substring(2, 6));
+
+    var newMonth = currentMonth;
+    var newYear = currentYear;
+    if(currentMonth > 1) {
+        newMonth = currentMonth - 1;
+        if (newMonth < 10) {
+            newMonth = "0" + newMonth; 
+        } else {
+            newMonth = String(newMonth);
+        }
+    } else {
+        newMonth = "12";
+        newYear = currentYear - 1;
+        newYear = String(newYear);
+    }
+
+    return String(newMonth) + String(newYear);
+}
+
+function sendAlert(header, message) {
+    const ALERTCONTAINER = document.getElementById("alert-container");
+    alertWarning = alertWarning.formatUnicorn({
+        warningHeader: header,
+        warningMsg: message
+    });
+
+    ALERTCONTAINER.innerHTML = alertWarning;
 }
