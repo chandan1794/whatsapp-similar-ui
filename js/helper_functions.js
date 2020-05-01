@@ -19,10 +19,17 @@ String.prototype.formatUnicorn = String.prototype.formatUnicorn || function () {
     return str;
 };
 
-function getMonthString(datetimeObject) {
-    var months = ['january','february','march','april','may','june','july','august',
-                    'september','october','november','december'];
-    return months[datetimeObject.getMonth()]; // getMonth method returns the month of the date (0-January :: 11-December)
+function getMonthYearString(datetimeObject) {
+    var month = datetimeObject.getMonth() + 1;
+    var year = datetimeObject.getFullYear();
+
+    if(month < 10){
+        month = "0" + month;
+    } else {
+        month = String(month);
+    }
+
+    return month + year;
 }
 
 /**

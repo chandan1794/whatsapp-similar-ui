@@ -2,9 +2,12 @@ const BASEDATAFILEURL = "https://static-websites-data.s3-ap-northeast-1.amazonaw
 const MSGBOX = document.getElementById("message-box");
 const LEFTMESSAGETYPE = "recieved";
 const RIGHTMESSAGETYPE = "sent";
+var lastLoadedFile = "";
 
 async function loadData(monthString) {
     const dataUrl = BASEDATAFILEURL + monthString + ".json";
+async function loadData(monthYearString) {
+    const dataUrl = BASEDATAFILEURL + monthYearString + ".json";
     try {
         const response = await fetch(dataUrl);
         if (response.status !== 200) {
@@ -13,6 +16,7 @@ async function loadData(monthString) {
             return;
         }
         const jsonResponse = await response.json();
+        lastLoadedFile = monthYearString;
         // console.log(jsonResponse);
         return jsonResponse;
     }
@@ -21,8 +25,8 @@ async function loadData(monthString) {
     }
 }
 
-async function loadMessages(monthString) {
-    const jsonData = await loadData(monthString);
+async function loadMessages(monthYearString) {
+    const jsonData = await loadData(monthYearString);
     console.log(jsonData);
     console.log(jsonData.sort(datetimeCompare));
     jsonData.forEach(msgObject => {
