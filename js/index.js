@@ -52,7 +52,7 @@ function loadUI(msgObject) {
     }
 
     objectToInsert = objectToInsert.formatUnicorn({
-        message: msgObject.message,
+        message: msgObject.message.join("\n"),
         datetime: msgObject.datetime
     })
 

@@ -42,6 +42,10 @@
     right: 0;
 }
 
+.card-text {
+    white-space: pre-wrap;
+}
+
 @media(max-width: 768px) {
     .single-msg {
         font-size: smaller;
