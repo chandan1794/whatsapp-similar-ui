@@ -1,5 +1,6 @@
 const BASEDATAFILEURL = "https://static-websites-data.s3-ap-northeast-1.amazonaws.com/whatsapp-similar-ui/";
 const MSGBOX = document.getElementById("message-box");
+const LOADOLDERBTN = document.getElementById("load-older-messages");
 const LEFTMESSAGETYPE = "recieved";
 const RIGHTMESSAGETYPE = "sent";
 var lastLoadedFile = "";
