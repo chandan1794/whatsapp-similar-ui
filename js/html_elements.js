@@ -37,3 +37,9 @@ var msgRightHTML =
         "</div>" +
     "</div>" +
 "</div>"
+
+var alertWarning = 
+"<div class='alert alert-warning alert-dismissible'>" +
+    "<button type='button' class='close' data-dismiss='alert'>&times;</button>" +
+    "<strong>{warningHeader}</strong> {warningMsg}" +
+"</div>";

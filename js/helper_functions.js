@@ -71,3 +71,13 @@ function getPreviousFileName(currentFileName) {
 
     return String(newMonth) + String(newYear);
 }
+
+function sendAlert(header, message) {
+    const ALERTCONTAINER = document.getElementById("alert-container");
+    alertWarning = alertWarning.formatUnicorn({
+        warningHeader: header,
+        warningMsg: message
+    });
+
+    ALERTCONTAINER.innerHTML = alertWarning;
+}
